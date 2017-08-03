@@ -2,7 +2,7 @@ FROM oberthur/docker-ubuntu-java:jdk8_8.121.13
 
 MAINTAINER Dawid Malinowski <d.malinowski@oberthur.com>
 
-ENV JENKINS_VERSION 2.46.3  
+ENV JENKINS_VERSION 2.60.2  
 
 COPY supervisor.conf /etc/supervisor/conf.d/supervisor.conf
 COPY jenkins_master.sh /usr/bin/jenkins_master.sh
