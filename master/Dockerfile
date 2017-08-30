@@ -2,7 +2,7 @@ FROM oberthur/docker-generic-app:openjdk-8u131b11_3
 
 MAINTAINER Dawid Malinowski <d.malinowski@oberthur.com>
 
-ENV JENKINS_VERSION 2.60.2  
+ENV JENKINS_VERSION 2.60.3  
 
 COPY supervisor.conf /etc/supervisor/conf.d/supervisor.conf
 COPY jenkins_master.sh /usr/bin/jenkins_master.sh
