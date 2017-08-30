@@ -8,10 +8,10 @@ COPY supervisor.conf /etc/supervisor/conf.d/supervisor.conf
 COPY jenkins_master.sh /usr/bin/jenkins_master.sh
 
 RUN mkdir -p /var/lib/jenkins/ /usr/share/jenkins/ /var/cache/jenkins/war/ /var/log/jenkins/ \
+    && apt-get update \
+    && apt-get install -y supervisor git openssh-client curl \
     && curl -o /usr/share/jenkins/jenkins.war http://mirrors.jenkins-ci.org/war-stable/$JENKINS_VERSION/jenkins.war -L \
     && usermod -s /bin/false -d /var/lib/jenkins app\
-    && apt-get update \
-    && apt-get install -y supervisor git openssh-client \
     # clean all cache to clean space
     && apt-get clean autoclean \
     && apt-get autoremove --yes \
